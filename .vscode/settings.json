@@ -1,0 +1,17 @@
+{
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "vue-html",
+      {
+        "language": "vue",
+        "autoFix": true
+      }
+    ],
+    "eslint.run": "onSave",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+  },
+  "files.autoSave": "onFocusChange",
+  "easysass.compileAfterSave": false,
+}

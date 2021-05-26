@@ -1,0 +1,8 @@
+@import "./global_variable";
+.router-wrap{
+    height:$heder_height;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
