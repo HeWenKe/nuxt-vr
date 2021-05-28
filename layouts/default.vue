@@ -1,11 +1,25 @@
 <template>
-  <div>
+  <div class="">
     <div class="router-wrap">
-      <ul>
-        <li v-for="(item, i) in routes" :key="i">
-          <nuxt-link :to="item.url">{{ item.name }}</nuxt-link>
-        </li>
-      </ul>
+      <div class="link-wrap">
+        <div class="logo">
+          <a href="/">
+            <img
+              v-if="currentPath === '/'"
+              src="@/assets/images/header/logo_white.png"
+              title="index"
+            />
+            <img v-else src="@/assets/images/header/logo.png" title="index" />
+          </a>
+        </div>
+        <ul class="nav-bar" :class="{ 'other-page': currentPath !== '/' }">
+          <li v-for="(item, i) in routes" :key="i">
+            <nuxt-link :to="item.url">{{ item.name }}</nuxt-link>
+          </li>
+        </ul>
+        <button v-if="currentPath === '/'" class="to-login">登录</button>
+        <button v-else class="to-login other-page">登录</button>
+      </div>
     </div>
     <div>
       <nuxt></nuxt>
@@ -16,14 +30,24 @@
 export default {
   data() {
     return {
+      currentPath: "/",
       routes: [
         {
           name: "首页",
           url: "/",
         },
         {
-          name: "资源列表",
+          name: "生活相冊",
           url: "/source",
+        },
+
+        {
+          name: "宣传展示",
+          url: "/show",
+        },
+        {
+          name: "创作工具",
+          url: "/create",
         },
         {
           name: "VIP特权",
@@ -32,11 +56,20 @@ export default {
       ],
     };
   },
+  watch: {
+    $route(res) {
+      debugger;
+      this.currentPath = res.path;
+    },
+  },
 };
 </script>
 
 
 <style>
+.bg {
+  background: #ccc;
+}
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;

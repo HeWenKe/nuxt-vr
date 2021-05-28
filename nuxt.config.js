@@ -1,7 +1,13 @@
+import env from './env' // 环境配置文件
 export default {
+  env: {
+    BASE_URL: env[process.env.NODE_ENV].BASE_URL,
+    NODE_ENV: env[process.env.NODE_ENV].NODE_ENV,
+    PROXY_URL: env[process.env.NODE_ENV].BASE_URL
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'vr-project',
+    title: '慧展云',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,7 +29,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,8 +42,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
+  axios: {
+    prefix: '/api',
+    credentials: true,
+    proxy: true
+  },
+  proxy: {
+    '/api/': {
+      target: 'https://i.news.qq.com/',
+      pathRewrite: {
+        '^/api/': ''
+      }
+    }
+  }
 
+  ,
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],

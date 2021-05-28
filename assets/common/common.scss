@@ -1,8 +1,61 @@
 @import "./global_variable";
+
 .router-wrap{
-    height:$heder_height;
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+   height:$heder_wrap_height;
+   width:100%;
+   display: flex;
+   align-items: center;
+   background-color: $main_bg_color;
+   z-index: 2;
+   .link-wrap{
+        height:$heder_height;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: $main_container_width;
+        margin:0 auto;
+       
+        .to-login{
+            color: #3bc9bb;
+            display: block;
+            width: 92px;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 34px;
+            background: #fff;
+            text-align: center;
+            &.other-page{
+                border-radius: 3px;
+                background: #3bc9bb;
+                color: #fff;
+                &:hover{
+                   background-color: #21e5de;
+                }
+            }
+        }
+        .nav-bar{
+            display: flex;
+            li{
+                padding:0 20px;
+                a{
+                    color:$menu_default_color;
+                    &.nuxt-link-exact-active{
+                        color:#fff;
+                    }
+                }
+            }
+            &.other-page{
+              a{
+                color: #333;
+                &.nuxt-link-exact-active{
+                    color:$menu_active_color;
+                }
+              }
+             }
+        }
 }
+
+}
+
