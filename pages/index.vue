@@ -27,8 +27,16 @@
             />
           </video>
         </div>
+        
       </div>
     </div>
+     <ul>
+          <li v-for="(item,i) in ip" :key="i">
+            <p>
+              {{item.title}}
+            </p>
+          </li>
+        </ul>
   </div>
 </template>
 
@@ -37,8 +45,8 @@ export default {
   async asyncData({ $axios }) {
     console.log($axios)
     console.log(process.env.NODE_ENV)
-    const ip = await $axios.$get("https://i.news.qq.com/trpc.qqnews_web.pc_base_srv.base_http_proxy/NinjaPageContentSync?pull_urls=today_topic_2018");
-    debugger
+    const ip = await $axios.$get("/trpc.qqnews_web.pc_base_srv.base_http_proxy/NinjaPageContentSync?pull_urls=today_topic_2018");
+    return {ip}
     //return { ip };
   }
 };

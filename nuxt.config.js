@@ -7,7 +7,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '慧展云',
+    title: '易联盟',
     htmlAttrs: {
       lang: 'en'
     },
@@ -46,12 +46,12 @@ export default {
   ],
   axios: {
     prefix: '/api',
-    credentials: true,
+    credentials: false,
     proxy: true
   },
   proxy: {
     '/api/': {
-      target: 'https://i.news.qq.com/',
+      target: 'https://i.news.qq.com',
       pathRewrite: {
         '^/api/': ''
       }
