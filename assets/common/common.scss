@@ -1,5 +1,10 @@
 @import "./global_variable";
 
+body{
+    overflow: hidden;
+    overflow-y: auto;
+    font-family: PingFang SC;
+}
 .router-wrap{
     position: relative;
    height:$heder_wrap_height;
@@ -57,5 +62,78 @@
         }
 }
 
+}
+.footer-wrap{
+    height: 437px;
+    background: #141621;
+    >ul{
+        display: flex;
+        padding-top:60px;
+        display: flex;
+        justify-content: center;
+        >li{
+            margin:0 92px;
+            p{
+                color:#636578;
+                margin-bottom: 30px;;
+                &.title{
+                    color:#fff;
+                }
+            }
+            &.left-item{
+                margin-right:22px ;
+                .title{
+                    margin-bottom: 15px;
+                }
+                .tel{
+                    font-size: 24px;;
+                }
+                button{
+                    width: 88px;
+                    height: 30px;
+                    background: rgba(85, 85, 85, 0.3);
+                    border: 1px solid #FFFFFF;
+                    border-radius: 2px;
+                    margin-top:15px;
+                    color:#fff;
+                }
+            }
+        }
+        .code-info{
+            width: 130px;
+            margin-top:5px;;
+            text-align: center;
+        }
+    }
+    .introduce{
+        color:#636578;
+        text-align: center;
+        margin-top: 40px;;
+        p{
+            margin-top:10px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+   
+}
+.copyright{
+    width: 1920px;
+    height: 60px;
+    background: #0C0E14;
+    font-size: 13px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #636578;
+    line-height: 14px;  
+    text-align: center;
+    line-height: 60px;
 }
 

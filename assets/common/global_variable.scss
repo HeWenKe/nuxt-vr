@@ -22,6 +22,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -89,7 +90,8 @@ input,textarea {
 button,input,textarea,select,optgroup,option,file {
     font: inherit;
     outline: none;
-    vertical-align: middle
+    vertical-align: middle;
+    box-sizing: border-box;
 }
 button{
     border:none;
@@ -151,7 +153,6 @@ html,body {
 nav,footer,section,header,article {
     display: block;
 }
-12
 i,em,ins,u {
     font-style: normal;
     text-decoration: none
@@ -266,6 +267,14 @@ input[type="submit"] {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+//大部分按钮的色值
+.vr-btn{
+    background-color: #41D9D9;
+    color: #fff;
+    border-radius: 23px;
+    border:none;
+    outline: none;
 }
 
 

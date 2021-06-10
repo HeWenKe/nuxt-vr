@@ -1,5 +1,5 @@
 <template>
-    <div>
-        vip
-    </div>
+  <div>
+    vip
+  </div>
 </template>
