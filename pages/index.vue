@@ -18,7 +18,7 @@
           <h1>超简单的在线展厅制作工具</h1>
           <span>快速构建3D可视化场景一键玩转数字互动营销
           </span>
-          <a href="/template.html">立即制作</a>
+          <nuxt-link to="/show">立即制作</nuxt-link>
         </div>
         <div class="video">
           <video muted="" autoplay="true" loop="true">
@@ -245,6 +245,8 @@
 </template>
 
 <script>
+// import { mapState, mapMutations } from 'vuex'
+// import { mapState } from 'vuex'
 export default {
   async asyncData({ $axios }) {
     console.log($axios)
@@ -253,6 +255,11 @@ export default {
     return { ip }
     // return { ip };
   },
+  computed: {
+    username() {
+      return this.$store.state.username
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.bindHandleScroll)
   },
@@ -260,6 +267,12 @@ export default {
     window.removeEventListener('scroll', this.bindHandleScroll)
   },
   methods: {
+    //  ...mapMutations({
+    //     toggle: 'todos/toggle'  //页面中会用到更新状态
+    //   }),
+    tologin() {
+      this.$store.commit('setUsername', 'hewenke11111111111')
+    },
     bindHandleScroll() {
       const parentEelement1 = document.getElementById('an-container1')
       const parentEelement2 = document.getElementById('an-container2')
@@ -392,7 +405,7 @@ export default {
       float: right;
       padding: 55px 29px 0;
       position: relative;
-      z-index: 1000;
+      z-index: 2;
       video {
         display: block;
         width: 100%;

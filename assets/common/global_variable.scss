@@ -1,5 +1,5 @@
-$heder_wrap_height:76px; //顶部容器最外层默认高度
-$heder_height:60px; //导航高度
+$heder_wrap_height:72px; //顶部容器最外层默认高度
+$heder_height:72px; //导航高度
 $main_container_width:1440px;//页面展示区域宽度
 $menu_active_color:#4ac7b5;//导航激活字体
 $menu_default_color:#fff;//导航激活字体
@@ -275,6 +275,13 @@ input[type="submit"] {
     border-radius: 23px;
     border:none;
     outline: none;
+    &:hover{
+        background-color: #41D9D9;
+        color:#fff;
+    }
+}
+.abg{
+    background-color:  #F9F9F9; 
 }
 
 

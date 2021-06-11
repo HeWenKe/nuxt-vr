@@ -3,25 +3,59 @@
     <div class="router-wrap">
       <div class="link-wrap">
         <div class="logo">
-          <a href="/">
+          <nuxt-link to="/">
             <img
               v-if="currentPath === '/'"
               src="@/assets/images/header/logo_white.png"
               title="index"
             >
             <img v-else src="@/assets/images/header/logo.png" title="index">
-          </a>
-        </div>
-        <ul class="nav-bar" :class="{ 'other-page': currentPath !== '/' }">
+          </nuxt-link></div>
+        <ul class="nav-bar" :class="{ 'home-page': currentPath === '/' }">
           <li v-for="(item, i) in routes" :key="i">
             <nuxt-link :to="item.url">{{ item.name }}</nuxt-link>
           </li>
         </ul>
-        <button v-if="currentPath === '/'" class="to-login">登录</button>
-        <button v-else class="to-login other-page">登录</button>
+        <div v-if="!isToken" class="login-wrap">
+          <button class="to-login" :class="{ 'home-page': currentPath === '/' }" @click="toLogin">登录</button>
+          <span :class="{ 'home-page': currentPath === '/' }" @click="toRegister">注册</span>
+        </div>
+        <div v-else class="user-wrap">
+          <div>
+            <div class="msg-wrap">
+              <el-badge is-dot class="item"> <i class="el-icon-bell" /></el-badge>
+            </div>
+          </div>
+          <div class="user-info">
+            <img src="@/assets/images/header/logo.png" alt="">
+            <span class="name">lijb0013 </span>
+            <span>退出登录</span>
+          </div>
+          <ul class="link-quick-item">
+            <nuxt-link to="/center/showroom_manager">
+              <li>
+                展厅管理
+              </li>
+            </nuxt-link>
+
+            <li>
+              订单管理
+            </li>
+            <li>
+              资金管理
+            </li>
+            <li>
+              收藏管理
+            </li>
+            <li>
+              账号管理
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
-    <div>
+    <div class="render-main">
       <nuxt />
     </div>
     <div class="footer-wrap">
@@ -72,42 +106,65 @@
     <div class="copyright">
       西安博奥软件科技有限公司 All Rights Reserved 陕ICP备15003244号
     </div>
+    <Login />
   </div>
 </template>
 <script>
+import Login from '@/components/Login'
 export default {
+  comments: {
+    Login
+  },
   data() {
     return {
-      currentPath: '/',
+      currentPath: '',
       routes: [
         {
           name: '首页',
           url: '/'
         },
         {
-          name: '生活相冊',
+          name: '应用案例',
           url: '/source'
         },
 
         {
-          name: '宣传展示',
+          name: '免费建展',
           url: '/show'
         },
         {
-          name: '创作工具',
-          url: '/create'
+          name: '新闻资讯',
+          url: '/news'
         },
         {
-          name: 'VIP特权',
+          name: '招商加盟',
           url: '/vip'
+        },
+        {
+          name: '新手指南',
+          url: '/help'
         }
       ]
     }
   },
+  computed: {
+    isToken() { return this.$store.state.LoginType }
+  },
   watch: {
     $route(res) {
-      debugger
       this.currentPath = res.path
+      window.localStorage.setItem('link', this.currentPath)
+    }
+  },
+  mounted() {
+    this.currentPath = window.localStorage.getItem('link') ? window.localStorage.getItem('link') : '/'
+  },
+  methods: {
+    toLogin() {
+      this.$store.commit('setIsLogin', { type: 'login', isLogin: true })
+    },
+    toRegister() {
+      this.$store.commit('setIsLogin', { type: 'register', isLogin: true })
     }
   }
 }

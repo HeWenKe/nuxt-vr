@@ -1,9 +1,22 @@
+import createPersistedState from 'vuex-persistedstate'
+export const plugins = [createPersistedState()]
 export const state = () => ({
-  counter: 0
+  setInfo: '',
+  token: '',
+  LoginType: {
+    type: 'login',
+    isLogin: false
+  }
 })
 
 export const mutations = {
-  increment(state) {
-    state.counter++
+  setToken: function(state, value) {
+    state.token = value
+  },
+  setInfo: function(state, value) {
+    state.setInfo = value
+  },
+  setIsLogin: function(state, value) {
+    state.LoginType = value
   }
 }

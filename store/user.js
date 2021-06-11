@@ -1,18 +1,22 @@
+import createPersistedState from 'vuex-persistedstate'
+export const plugins = [createPersistedState()]
 export const state = () => ({
-  list: []
+  isLogin: ''
 })
 
 export const mutations = {
-  add(state, text) {
-    state.list.push({
-      text,
-      done: false
-    })
-  },
-  remove(state, { todo }) {
-    state.list.splice(state.list.indexOf(todo), 1)
-  },
-  toggle(state, todo) {
-    todo.done = !todo.done
+  setLoginStatus(state, value) { // 设置登录状态
+    state.isLogin = value
   }
+}
+export const actions = {
+
+}
+export default {
+  namespaced: true, // 命名空间
+  state, // 这里你用到了哪几个属性就写哪几个，不需要的可以注释掉
+  // getters,
+  actions,
+  mutations
+
 }

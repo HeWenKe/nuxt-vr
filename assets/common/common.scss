@@ -5,7 +5,7 @@ body{
     overflow-y: auto;
     font-family: PingFang SC;
 }
-.router-wrap{
+.router-wrap{       
     position: relative;
    height:$heder_wrap_height;
    width:100%;
@@ -21,46 +21,123 @@ body{
         align-items: center;
         width: $main_container_width;
         margin:0 auto;
-       
         .to-login{
-            color: #3bc9bb;
             display: block;
             width: 92px;
             height: 34px;
             line-height: 34px;
-            border-radius: 34px;
-            background: #fff;
             text-align: center;
-            &.other-page{
-                border-radius: 3px;
-                background: #3bc9bb;
-                color: #fff;
+            border-radius: 20px;
+            background: #3bc9bb;
+            color: #fff;
+            margin-right:32px;
+            &:hover{
+               background-color: #21e5de;
+            }
+            &.home-page{
+                color: #3bc9bb;
+                border-radius: 34px;
+                background: #fff;
                 &:hover{
-                   background-color: #21e5de;
+                    background-color: #fff;
                 }
             }
+        }
+        span{
+            color:#333;
+            &.home-page{
+                color: #fff;
+            }
+        }
+        .login-wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
         .nav-bar{
             display: flex;
             li{
                 padding:0 20px;
                 a{
+                    color: #333;
+                    &.nuxt-link-exact-active{
+                        color:$menu_active_color;
+                    }
+                  }
+                  &:first-child{
+                        a.nuxt-link-active{
+                            color:#333;
+                        }
+                  }
+            }
+             &.home-page{
+                a{
                     color:$menu_default_color;
                     &.nuxt-link-exact-active{
-                        color:#fff;
+                        color:#fff !important;
                     }
                 }
-            }
-            &.other-page{
-              a{
-                color: #333;
-                &.nuxt-link-exact-active{
-                    color:$menu_active_color;
-                }
-              }
+             }
+             a.nuxt-link-active:last-child{
+                color:$menu_active_color;
              }
         }
-}
+    }
+    .user-wrap{
+        position: relative;
+        z-index: 1001;
+        .item{
+            margin-right:30px;
+            cursor: pointer;
+        }
+        .el-icon-bell{
+            font-size: 30px;
+        }
+        img{
+            height: 32px;
+            width: 32px;
+            background-color: #3bc9bb;
+            border-radius: 100%;
+        }
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .user-info{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span.name{
+                margin:0 20px 0 12px;
+            }
+        }
+        &:hover{
+            transition: all 1s;
+            .link-quick-item{
+              opacity: 1;
+            } 
+        }
+        .link-quick-item{
+            opacity: 0;
+            position: absolute;
+            z-index: 1001;
+            left:60px;
+            top:72px;
+            width: 180px;
+            background: #FFFFFF;
+            border-radius: 0px 0px 4px 4px;
+            padding:20px;
+            padding-top:10px;
+            transition: all 1s;
+            box-shadow: rgb(228, 228, 228) 0 10px 10px;
+            li{
+                line-height: 40px;
+                cursor: pointer;
+            }
+        }
+    }
 
 }
 .footer-wrap{
@@ -136,4 +213,204 @@ body{
     text-align: center;
     line-height: 60px;
 }
+.c9{
+  color:  #41D9D9
+}
+//应用案例和免费建展公共样式
+.single-banner-wrap{
+    height:120px ;
+    background-color: rgba(76, 104, 146, 0.8);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    h1,p{
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    h1{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 500;
+        margin-top:12px;;
+    }
+}
+.case-content-wrap{
+    width:1600px;
+    margin:0 auto;
+    margin-top:24px;
+    .search-wrap{
+        background-color: #fff;
+        padding: 30px;
+        .each-item{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            span{
+                margin-right:20px;
+            }
+            ul{
+                display: flex;
+                li{
+                    padding:8px 20px;
+                    background: #F7F7F7;
+                    border-radius: 16px;
+                    margin-right:14px;
+                    color: #333333;
+                    font-size: 14px;
+                    cursor: pointer;
+                    &.on{
+                        background-color: #41D9D9;
+                        color:#fff;
+                    }
+                
+                }
+               
+            }
+            input{
+                border: 1px solid #BABABA;
+                border-radius: 15px;
+                height: 40px;
+            }
+            .el-input__suffix{
+                cursor: pointer;
+                margin-right:0;
+                font-size: 24px;
+                .el-input__suffix-inner{
+                    margin-right:10px;;
+                }
+            }
+        }
+    }
+    .list-con{
+        margin-top: 24px;
+        .item-wrap{
+            float: left;
+            position: relative;
+            width:300px;
+            background-color: #fff;
+            overflow: hidden;
+            margin-left:24px;
+            margin-bottom: 24px;;
+            &:nth-child(5n+1){
+                margin-left:0;
+            }
+            .img-wrap{
+              width:300px;
+              height: 200px;
+               >img{
+                 width:100%;
+                 height:100%;
+              }
+    
+            }
+            &:hover{
+              transform: scale(1.1);
+              .show-bar{
+                display: none;
+              }
+              .btn-wrap{
+                display: flex;
+              }
+              transition: all 1.5s
+    
+            }
+            .select-icon{
+              position: absolute;
+              width:28px;
+              height:28px;
+              right:12px;
+              top:12px;
+              background-color: #3319a5
+    
+            }
+            p{
+              align-items:baseline;
+              margin-bottom:12px;
+              display: flex;
+              &:last-child{
+                  margin-bottom: 0;
+              }
+              justify-content: space-between;
+              font-weight: 500;
+              .title-text{
+                font-size: 16px;
+                font-weight: 500;
+                color: #333333;
+              }
+              &.code-text{
+                justify-content: left;
+              }
+              &.code-text,.pre-view{
+                color:#BABABA;
+                font-size: 13px;
+              }
+              &.price-wrap{
+                  justify-content: flex-start;
+                  align-items: center;
+                 .price-num{
+                    color:#F4621F;
+                    font-size: 20px;
+                    font-weight: 500;
+                 } 
+                 .time-buy{
+                    color:#F4621F;
+                    border:1px solid  #F4621F;
+                    font-size: 12px;
+                    padding:0 1px;
+                    margin-left:6px;
+                 }
+                 .old-price,.buy-num{
+                    color: #BABABA;
+                    font-size: 12px;
+                    margin-left: 10px;
+                 }
+                 .old-price{
+                     text-decoration: line-through;
+                 }                
+              }
+            }
+            .show-bar{
+              padding:14px 15px 0;
+              height: calc(100% - 200px);
+            }
+            .btn-wrap{
+                height: calc(100% - 200px);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                button{
+                    width:112px;
+                    height:38px;
+                    border-radius: 20px;
+                    margin:0 8px;
+                }
+            }  
+        }
+    }
+}
+
+//分页样式
+.pagination-wrap{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding:50px;
+    .el-pagination.is-background .el-pager li:not(.disabled).active{
+        background-color: #41D9D9;
+    }
+    .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+        background-color: #fff;
+    }
+}
+
 

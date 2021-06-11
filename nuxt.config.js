@@ -1,5 +1,6 @@
 import env from './env' // 环境配置文件
 export default {
+  mode: 'spa',
   env: {
     BASE_URL: env[process.env.NODE_ENV].BASE_URL,
     NODE_ENV: env[process.env.NODE_ENV].NODE_ENV,
@@ -23,14 +24,15 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css',
     '@/assets/common/common.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
-    '@/plugins/axios'
+    '@/plugins/axios',
+    '@/plugins/vuex-persistedstate.client.js'
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
