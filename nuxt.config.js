@@ -77,7 +77,8 @@ export default {
   },
   target: 'static',
   router: {
-    base: '/nuxt-vr/'
+    base: '/nuxt-vr/',
+    mode: 'hash'
   },
   generate: {
     dir: 'docs',
