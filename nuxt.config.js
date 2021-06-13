@@ -80,6 +80,7 @@ export default {
     base: '/nuxt-vr/'
   },
   generate: {
-    dir: 'docs'
+    dir: 'docs',
+    subFolders: false
   }
 }
