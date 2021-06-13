@@ -2,15 +2,15 @@ import env from './env' // 环境配置文件
 export default {
   mode: 'spa',
   env: {
-    BASE_URL: env[process.env.NODE_ENV].BASE_URL,
-    NODE_ENV: env[process.env.NODE_ENV].NODE_ENV,
-    PROXY_URL: env[process.env.NODE_ENV].BASE_URL
+    // BASE_URL: env[process.env.NODE_ENV].BASE_URL,
+    // NODE_ENV: env[process.env.NODE_ENV].NODE_ENV,
+    // PROXY_URL: env[process.env.NODE_ENV].BASE_URL
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '易联盟',
+    title: '慧展云',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },
@@ -18,7 +18,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 

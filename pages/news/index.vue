@@ -4,40 +4,46 @@
       新闻资讯
     </div>
     <ul class="news-list">
-      <li>
-        <img src="@/assets/images/index/bannerbg.png" alt="">
-        <div class="info-text">
-          <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
-          <p>来自航空航天、汽车和
-          </p>
-        </div>
-        <div class="time">
-          <p class="year">2021</p>
-          <p class="t">06-03</p>
-        </div>
-      </li>
-      <li>
-        <img src="@/assets/images/index/bannerbg.png" alt="">
-        <div class="info-text">
-          <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
-          <p>{{ textNum | els }}</p>
-        </div>
-        <div class="time">
-          <p class="year">2021</p>
-          <p class="t">06-03</p>
-        </div>
-      </li>
-      <li>
-        <img src="@/assets/images/index/bannerbg.png" alt="">
-        <div class="info-text">
-          <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
-          <p>{{ textNum | els }}</p>
-        </div>
-        <div class="time">
-          <p class="year">2021</p>
-          <p class="t">06-03</p>
-        </div>
-      </li>
+      <nuxt-link to="/news/1">
+        <li>
+          <img src="@/assets/images/index/bannerbg.png" alt="">
+          <div class="info-text">
+            <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
+            <p>来自航空航天、汽车和
+            </p>
+          </div>
+          <div class="time">
+            <p class="year">2021</p>
+            <p class="t">06-03</p>
+          </div>
+        </li>
+      </nuxt-link>
+      <nuxt-link to="/news/2">
+        <li>
+          <img src="@/assets/images/index/bannerbg.png" alt="">
+          <div class="info-text">
+            <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
+            <p>{{ textNum | els }}</p>
+          </div>
+          <div class="time">
+            <p class="year">2021</p>
+            <p class="t">06-03</p>
+          </div>
+        </li>
+      </nuxt-link>
+      <nuxt-link to="/news/1">
+        <li>
+          <img src="@/assets/images/index/bannerbg.png" alt="">
+          <div class="info-text">
+            <h4>HTC Vive面向全球推出系列虚拟现实软件及解决方案，助力企业革新</h4>
+            <p>{{ textNum | els }}</p>
+          </div>
+          <div class="time">
+            <p class="year">2021</p>
+            <p class="t">06-03</p>
+          </div>
+        </li>
+      </nuxt-link>
     </ul>
     <div class="pagination-wrap">
       <el-pagination
@@ -95,7 +101,7 @@ export default {
 .news-list{
   width:1000px;
   margin:50px auto 0;
-  >li{
+  li{
     display: flex;
     position: relative;
     padding:30px 0;

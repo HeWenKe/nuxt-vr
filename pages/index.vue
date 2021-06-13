@@ -405,7 +405,6 @@ export default {
       float: right;
       padding: 55px 29px 0;
       position: relative;
-      z-index: 2;
       video {
         display: block;
         width: 100%;

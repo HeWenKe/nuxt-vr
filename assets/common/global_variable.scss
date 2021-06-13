@@ -284,6 +284,16 @@ input[type="submit"] {
     background-color:  #F9F9F9; 
 }
 
+.tool-tip-class{
+    max-width:200px !important;
+}
+
+.ell{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
 
 
 

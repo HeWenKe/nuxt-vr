@@ -24,33 +24,71 @@
           <div>
             <div class="msg-wrap">
               <el-badge is-dot class="item"> <i class="el-icon-bell" /></el-badge>
+              <div class="notice-wrap">
+                <p>
+                  <span>消息</span>
+                  <span class="del-btn fr">
+                    清空
+                  </span>
+                </p>
+                <ul>
+                  <li>
+                    [通知] 您好，您的模板使用已到期
+                    请尽快续费…
+                    <span class="n">76</span>
+                  </li>
+                  <li>
+                    [通知] 您好，您的模板使用已到期
+                    请尽快续费…
+                    <span class="n">76</span>
+                  </li>
+                  <li>
+                    [通知] 您好，您的模板使用已到期
+                    请尽快续费…
+                    <span class="n">76</span>
+                  </li>
+                  <li>
+                    [通知] 您好，您的模板使用已到期
+                    请尽快续费…
+                  </li>
+                </ul>
+                <nuxt-link to="/center/msg"><div class="all">查看全部</div></nuxt-link>
+              </div>
             </div>
           </div>
           <div class="user-info">
             <img src="@/assets/images/header/logo.png" alt="">
             <span class="name">lijb0013 </span>
-            <span>退出登录</span>
+            <span @click="tologinOut">退出登录</span>
+            <ul class="link-quick-item">
+              <nuxt-link to="/center/showroom">
+                <li>
+                  展厅管理
+                </li>
+              </nuxt-link>
+              <nuxt-link to="/center/order">
+                <li>
+                  订单管理
+                </li>
+              </nuxt-link>
+              <nuxt-link to="/center/moneymanager">
+                <li>
+                  资金管理
+                </li>
+              </nuxt-link>
+              <nuxt-link to="/center/collection">
+                <li>
+                  收藏管理
+                </li>
+              </nuxt-link>
+              <nuxt-link to="/center/account">
+                <li>
+                  账号管理
+                </li>
+              </nuxt-link>
+            </ul>
           </div>
-          <ul class="link-quick-item">
-            <nuxt-link to="/center/showroom_manager">
-              <li>
-                展厅管理
-              </li>
-            </nuxt-link>
 
-            <li>
-              订单管理
-            </li>
-            <li>
-              资金管理
-            </li>
-            <li>
-              收藏管理
-            </li>
-            <li>
-              账号管理
-            </li>
-          </ul>
         </div>
 
       </div>
@@ -148,7 +186,7 @@ export default {
     }
   },
   computed: {
-    isToken() { return this.$store.state.LoginType }
+    isToken() { return this.$store.state.token }
   },
   watch: {
     $route(res) {
@@ -165,6 +203,10 @@ export default {
     },
     toRegister() {
       this.$store.commit('setIsLogin', { type: 'register', isLogin: true })
+    },
+    tologinOut() {
+      this.$store.commit('setToken', '')
+      window.location.reload()
     }
   }
 }
