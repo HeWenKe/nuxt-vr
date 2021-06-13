@@ -76,7 +76,7 @@ export default {
     }
   },
   router: {
-    base: 'nuxt-vr'
+    base: '/nuxt-vr'
   },
   generate: {
     dir: 'docs',
